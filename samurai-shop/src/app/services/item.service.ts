@@ -12,4 +12,8 @@ export class ItemService {
   getAll():Item[]{
     return items;
   }
+
+  getItemById(itemId:string):Item{
+    return this.getAll().find(item => item.id == itemId) ?? new Item;
+  }
 }
