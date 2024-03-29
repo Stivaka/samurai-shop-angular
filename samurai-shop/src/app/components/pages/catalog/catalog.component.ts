@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Observable } from 'rxjs';
 import { ItemService } from 'src/app/services/item.service';
 import { Item } from 'src/app/shared/models/Item';
 
@@ -12,6 +13,10 @@ export class CatalogComponent {
   allItems:Item[] = [];
 
   constructor(private itemService: ItemService){
-    this.allItems = itemService.getAll();
+    let itemObs:Observable<Item[]>
+
+    itemObs = itemService.getAll();
+
   }
+
 }
