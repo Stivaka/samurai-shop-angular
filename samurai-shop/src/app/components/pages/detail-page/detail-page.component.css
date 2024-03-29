@@ -104,8 +104,9 @@ img {
     margin: 2rem 0;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    flex: wrap;
 }
+
 
 button {
     display: block;
