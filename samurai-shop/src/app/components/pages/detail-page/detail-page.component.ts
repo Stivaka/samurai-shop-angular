@@ -15,9 +15,16 @@ export class DetailPageComponent {
   item!: Item;
 
   constructor(activatedRoute: ActivatedRoute, itemService: ItemService) {
+
     activatedRoute.params.subscribe((params) => {
+
       if (params['id'])
-        this.item = itemService.getItemById(params['id']);
+
+        itemService.getItemById(params['id']).subscribe(serverItem => {
+          
+          this.item = serverItem;
+
+        });
 
     })
   }

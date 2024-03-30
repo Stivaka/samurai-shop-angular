@@ -16,7 +16,9 @@ export class CatalogComponent {
     let itemObs:Observable<Item[]>
 
     itemObs = itemService.getAll();
-
+    itemObs.subscribe((serverItems) => {
+      this.allItems = serverItems;
+    })
   }
 
 }

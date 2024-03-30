@@ -1,7 +1,7 @@
 <div class="container">
-    <img src="{{item.image}}"/>
+    <img *ngIf="item" [src]="item.image" />
 
-    <div class="details">
+    <div *ngIf="item" class="details">
 
         <div class="header">
             <span class="name">
