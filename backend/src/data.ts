@@ -53,4 +53,18 @@ export const items: any[] = [
 
     },
 
-]
+];
+
+export const users: any[] = [
+    {
+        name: "Steven",
+        email: "steven@abv.bg",
+        password: "1234",
+
+    },
+    {
+        name: "Kolyo",
+        email: "kolyo@abv.bg",
+        password: "1234",
+    }
+];
