@@ -7,6 +7,8 @@ import { HeaderComponent } from './components/partials/header/header.component';
 import { HomeComponent } from './components/pages/home/home.component';
 import { CatalogComponent } from './components/pages/catalog/catalog.component';
 import { DetailPageComponent } from './components/pages/detail-page/detail-page.component';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -14,12 +16,14 @@ import { DetailPageComponent } from './components/pages/detail-page/detail-page.
     HeaderComponent,
     HomeComponent,
     CatalogComponent,
-    DetailPageComponent
+    DetailPageComponent,
+    LoginPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
