@@ -9,16 +9,16 @@
                 <li>
                     <a routerLink="/catalog">Catalog</a>
                 </li>
-                <li>
+                <li *ngIf="!isAuth">
                     <a routerLink="/login">Login</a>
                 </li>
-                <li class="menu-container">
-                    <a routerLink="/dashboard">Steven</a>
+                <li *ngIf="isAuth" class="menu-container">
+                    <a routerLink="/dashboard">{{user.name}}</a>
                     <div class="menu">
                         <a routerLink="/profile">Profile</a>
                         <a routerLink="/create">Create Offer</a>
                         <a routerLink="/orders">My Orders</a>
-                        <a>Logout</a>
+                        <a (click)="logout()">Logout</a>
                     </div>
                 </li>
                 <li>

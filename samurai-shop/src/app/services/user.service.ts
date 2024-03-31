@@ -12,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 
 export class UserService {
 
-  private userSubject = new BehaviorSubject<User>(new User());
+  private userSubject = new BehaviorSubject<User>(this.getUserFromLocalStorage());
   public userObs:Observable<User>;
 
   
@@ -26,6 +26,7 @@ export class UserService {
     return this.http.post<User>(user_login, userLogin).pipe(
       tap({
         next: (user) => {
+          this.setUserToLocalStorage(user);
           this.userSubject.next(user);
           this.toastrService.success(
             `Login successful!`,
@@ -40,6 +41,22 @@ export class UserService {
       })
     );
 
+  }
+
+  logout(){
+    this.userSubject.next(new User());
+    localStorage.removeItem(`User`);
+    window.location.reload();
+  }
+
+  private setUserToLocalStorage(user:User){
+    localStorage.setItem(`User`, JSON.stringify(user));
+  }
+
+  private getUserFromLocalStorage():User{
+    const userJson = localStorage.getItem(`User`);
+    if (userJson) return JSON.parse(userJson) as User;
+    return new User;
   }
 
 }
