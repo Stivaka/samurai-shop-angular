@@ -60,11 +60,15 @@ export const users: any[] = [
         name: "Steven",
         email: "steven@abv.bg",
         password: "1234",
+        forSale: [],
+        boughtItems:[],
 
     },
     {
         name: "Kolyo",
         email: "kolyo@abv.bg",
         password: "1234",
+        forSale: [],
+        boughtItems:[],
     }
 ];
