@@ -15,8 +15,8 @@ export const UserSchema = new Schema<User>(
         name: {type:String, required:true},
         email: {type: String, required:true, unique:true},
         password: {type: String, required: true},
-        forSale: [{type: Schema.Types.ObjectId, ref: 'Item'}],
-        boughtItems: [{type: Schema.Types.ObjectId, ref: 'Item'}]
+        forSale: [{type: Schema.Types.ObjectId, required: true}],
+        boughtItems: [{type: Schema.Types.ObjectId, required: true}]
     },{
         timestamps: true,
         toJSON:{

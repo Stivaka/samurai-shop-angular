@@ -1,16 +1,18 @@
 import { Injectable } from '@angular/core';
 import { Item } from '../shared/models/Item';
-import { items } from 'src/data';
+// import { items } from 'src/data';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { catalog_url, details_item_by_id } from '../shared/https/url';
+import { Observable, tap } from 'rxjs';
+import { catalog_url, create_item_method, details_item_by_id } from '../shared/https/url';
+import { CreateItem } from '../shared/interfaces/create_item';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient, private ToastrService:ToastrService) { }
 
   getAll(): Observable<Item[]>{
 
@@ -21,4 +23,5 @@ export class ItemService {
   getItemById(itemId:string):Observable<Item>{
     return this.http.get<Item>(details_item_by_id + itemId);
   }
+
 }

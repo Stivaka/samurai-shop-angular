@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { users } from "../data";
+// import { users } from "../data";
 import jwt from "jsonwebtoken";
 import expressAsyncHandler from 'express-async-handler'
 import { UserModel } from "../models/user.model";
@@ -35,13 +35,18 @@ router.post('/login', expressAsyncHandler( async (req, res) => {
 const generateToken = (user:any) => {
 
     const token = jwt.sign({
-        email:user.email
+        id: user.id, email:user.email
     }, "lkasdlkjlkrkceoj", {
         expiresIn: "30d"
     });
 
-    user.password = token;
-    return user;
+    
+    return {
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        token: token
+      };
 
 }
 

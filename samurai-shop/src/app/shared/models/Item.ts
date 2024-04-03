@@ -1,5 +1,6 @@
+
 export class Item{
-    id!:string;
+    id!:string
     name!:string;
     price!:number;
     image!:string;
@@ -9,4 +10,5 @@ export class Item{
     weight!:number;
     durability!:number;
     description!:string;
+    owner!:string;
 }

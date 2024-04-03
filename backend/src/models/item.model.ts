@@ -1,4 +1,4 @@
-import mongoose, {Schema, model} from 'mongoose';
+import {Schema, model} from 'mongoose';
 import { Types } from 'mongoose';
 
 export interface Item{
@@ -28,7 +28,7 @@ export const ItemSchema = new Schema<Item>(
         weight: {type: Number, required: true},
         durability: {type: Number, required: true},
         description: {type: String, required: true},
-        owner: {type: Schema.Types.ObjectId, ref: 'User'},
+        owner: {type: Schema.Types.ObjectId, required: true},
     },{
         toJSON:{
             virtuals: true

@@ -17,8 +17,8 @@ app.use(cors({
     origin:["http://localhost:4200"]
 }));
 
-app.use(itemRouter);
 app.use(userRouter);
+app.use(itemRouter);
 
 const port = 3000;
 app.listen(port, () => {
