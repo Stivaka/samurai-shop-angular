@@ -39,7 +39,16 @@
             </span>
         </div>
 
-        <button>Add To Cart</button>
+        <div *ngIf="isOwnOffer">
+            <button class="edit">
+                Edit
+            </button>
+            <button class="delete"(click)="deleteBtn()">
+                Delete
+            </button>
+        </div>
+
+        <button *ngIf="!isOwnOffer" (click)="addClick()">Add To Cart</button>
     </div>
 
 </div>

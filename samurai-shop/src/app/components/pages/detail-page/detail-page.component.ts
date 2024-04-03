@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ItemService } from 'src/app/services/item.service';
 import { Item } from 'src/app/shared/models/Item';
+import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-detail-page',
@@ -14,7 +16,7 @@ export class DetailPageComponent {
 
   item!: Item;
 
-  constructor(activatedRoute: ActivatedRoute, itemService: ItemService) {
+  constructor(activatedRoute: ActivatedRoute, private itemService: ItemService, private router:Router, private toastrService: ToastrService,) {
 
     activatedRoute.params.subscribe((params) => {
 
@@ -23,10 +25,44 @@ export class DetailPageComponent {
         itemService.getItemById(params['id']).subscribe(serverItem => {
           
           this.item = serverItem;
+          
 
         });
 
     })
+  
+  }
+  
+  get isOwnOffer(){
+
+    if (localStorage.getItem('User')){
+      
+      const userToken = JSON.parse(localStorage.getItem(`User`) || '');
+      if (this.item.owner == userToken.id){
+  
+        return true;
+      } 
+    }
+
+    return false;
+
+  }
+
+  addClick() {
+    this.router.navigateByUrl('/')
+  }
+
+  deleteBtn(){
+
+    this.itemService.deleteItem(this.item.id).subscribe({
+
+      next:() => {
+        this.router.navigateByUrl(`/catalog`);
+      },
+      error:(error) => {
+        this.toastrService.error(error.error, 'Cannot delete offer');
+      }
+    });
   }
 
 }
