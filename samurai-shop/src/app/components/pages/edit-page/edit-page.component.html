@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="content">
+        <h1>Create Offer</h1>
+        <form [formGroup]="updateForm">
+
+            <div>
+                <input type="text" placeholder="Name" formControlName="name">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Price" formControlName="price">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Image" formControlName="image">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Type" formControlName="type">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Material" formControlName="material">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Color" formControlName="color">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Weight" formControlName="weight">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Durability" formControlName="durability">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Description" formControlName="description">
+            </div>
+
+            <div class="button">
+                <button (click)="updateOffer()">Create</button>
+            </div>
+        </form>
+    </div>
+</div>

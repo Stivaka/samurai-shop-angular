@@ -13,6 +13,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateComponent } from './components/pages/create/create.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
+import { EditPageComponent } from './components/pages/edit-page/edit-page.component';
+import { TextInputComponent } from './components/partials/text-input/text-input.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AuthInterceptor } from './auth/auth.interceptor';
     CatalogComponent,
     DetailPageComponent,
     LoginPageComponent,
-    CreateComponent
+    CreateComponent,
+    EditPageComponent,
+    TextInputComponent,
   ],
   imports: [
     BrowserModule,

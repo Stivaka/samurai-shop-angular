@@ -53,12 +53,20 @@ router.get(`/delete/:itemId`, expressAsyncHandler( async (req, res) => {
     res.send(item)
 }))
 
+router.post(`/edit`, expressAsyncHandler ( async (req, res) => {
+
+    const offerBody = req.body;
+
+    const updateOffer = await ItemModel.findByIdAndUpdate(req.body._id, offerBody, { runValidators: true})
+    res.send(updateOffer);
+}))
+
 async function isOwner(req: any, res: any, next:any) {
     
     const item = await ItemModel.findById(req.params.itemId);
 
     if (item!.owner != req.user?.id){
-        return;
+        return 
     }
     next();
 

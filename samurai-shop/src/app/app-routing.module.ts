@@ -5,13 +5,15 @@ import { CatalogComponent } from './components/pages/catalog/catalog.component';
 import { DetailPageComponent } from './components/pages/detail-page/detail-page.component';
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { CreateComponent } from './components/pages/create/create.component';
+import { EditPageComponent } from './components/pages/edit-page/edit-page.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'catalog', component:CatalogComponent},
   {path:'item/:id', component:DetailPageComponent},
   {path: 'login', component:LoginPageComponent},
-  {path: 'create', component:CreateComponent}
+  {path: 'create', component:CreateComponent},
+  {path: 'edit/:id', component:EditPageComponent},
 ];
 
 @NgModule({

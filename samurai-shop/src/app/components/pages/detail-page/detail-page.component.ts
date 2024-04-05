@@ -49,7 +49,13 @@ export class DetailPageComponent {
   }
 
   addClick() {
-    this.router.navigateByUrl('/')
+    this.router.navigateByUrl('/catalog')
+  }
+
+  editBtn(){
+    
+    this.router.navigateByUrl('/edit/' + this.item.id)
+
   }
 
   deleteBtn(){

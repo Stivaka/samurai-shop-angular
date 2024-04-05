@@ -21,11 +21,12 @@ export class ItemService {
   }
 
   getItemById(itemId:string):Observable<Item>{
-    return this.http.get<Item>(details_item_by_id + itemId);
+    return this.http.get<Item>(details_item_by_id + itemId)
   }
 
   deleteItem(itemId:string): Observable<Item>{
     
     return this.http.get<Item>(delete_item + itemId);
   }
+
 }

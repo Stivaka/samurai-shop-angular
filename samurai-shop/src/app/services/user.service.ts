@@ -45,7 +45,6 @@ export class UserService {
 
   public get currentUser():User{
 
-    
     return this.userSubject.value;
   }
 
