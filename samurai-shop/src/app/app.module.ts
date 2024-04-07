@@ -15,6 +15,7 @@ import { CreateComponent } from './components/pages/create/create.component';
 import { AuthInterceptor } from './auth/auth.interceptor';
 import { EditPageComponent } from './components/pages/edit-page/edit-page.component';
 import { TextInputComponent } from './components/partials/text-input/text-input.component';
+import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { TextInputComponent } from './components/partials/text-input/text-input.
     CreateComponent,
     EditPageComponent,
     TextInputComponent,
+    RegisterPageComponent,
   ],
   imports: [
     BrowserModule,

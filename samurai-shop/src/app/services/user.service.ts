@@ -3,8 +3,9 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { User } from '../shared/models/User';
 import { IUserLogin } from '../shared/interfaces/userLogin';
 import { HttpClient } from '@angular/common/http';
-import { user_login } from '../shared/https/url';
+import { register_user, user_login } from '../shared/https/url';
 import { ToastrService } from 'ngx-toastr';
+import { IUserRegister } from '../shared/interfaces/user_register';
 
 @Injectable({
   providedIn: 'root'
@@ -41,6 +42,26 @@ export class UserService {
       })
     );
 
+  }
+
+  register(userRegister:IUserRegister): Observable<User>{
+    return this.http.post<User>(register_user, userRegister).pipe(
+      tap({
+        next: (user) => {
+          this.setUserToLocalStorage(user);
+          this.userSubject.next(user);
+          this.toastrService.success(
+            `Register successful`,
+            `Welcome, ${user.name}`
+          )
+        },
+        error : (erroResponse) => {
+
+          this.toastrService.error(erroResponse.error, `Register failed`)
+
+        }
+      })
+    )
   }
 
   public get currentUser():User{

@@ -6,6 +6,7 @@ import { DetailPageComponent } from './components/pages/detail-page/detail-page.
 import { LoginPageComponent } from './components/pages/login-page/login-page.component';
 import { CreateComponent } from './components/pages/create/create.component';
 import { EditPageComponent } from './components/pages/edit-page/edit-page.component';
+import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path: 'login', component:LoginPageComponent},
   {path: 'create', component:CreateComponent},
   {path: 'edit/:id', component:EditPageComponent},
+  {path: 'register', component:RegisterPageComponent},
 ];
 
 @NgModule({

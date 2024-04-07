@@ -2,7 +2,8 @@ import { Router } from "express";
 // import { users } from "../data";
 import jwt from "jsonwebtoken";
 import expressAsyncHandler from 'express-async-handler'
-import { UserModel } from "../models/user.model";
+import {User, UserModel } from "../models/user.model";
+import bcrypt from 'bcryptjs';
 
 const router = Router();
 
@@ -23,16 +24,42 @@ const router = Router();
 router.post('/login', expressAsyncHandler( async (req, res) => {
 
     const {email, password} = req.body;
-    const user = await UserModel.findOne({email, password})
+    const user = await UserModel.findOne({email})
 
-    if(user){
+    if(user && (await bcrypt.compare(password, user.password))){
         res.send(generateToken(user));
     } else {
         res.status(400).send("Email or password is invalid!")
     }
 }))
 
-const generateToken = (user:any) => {
+router.post(`/register`, expressAsyncHandler ( async (req, res) => {
+
+    const {name, email, password} = req.body;
+
+    const user = await UserModel.findOne({email});
+
+    if (user) {
+        res.status(400).send(`User is already exist!`);
+        return;
+    }
+
+    const encryptedPass = await bcrypt.hash(password, 10);
+
+    const newUser:User = {
+        id:'',
+        name,
+        email: email.toLowerCase(),
+        password: encryptedPass,
+        forSale: [],
+        boughtItems: [],
+    }
+
+    const createUser = await UserModel.create(newUser);
+    res.send(generateToken(createUser));
+}))
+
+const generateToken = (user:User) => {
 
     const token = jwt.sign({
         id: user.id, email:user.email
