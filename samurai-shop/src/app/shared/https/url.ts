@@ -7,3 +7,4 @@ export const create_item_method = base_url + `/create`;
 export const delete_item = base_url + `/delete/`;
 export const update_item = base_url + '/edit'
 export const register_user = base_url + '/register';
+export const user_offers = base_url + '/offers';

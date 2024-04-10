@@ -62,6 +62,21 @@ router.post(`/edit`, expressAsyncHandler ( async (req, res) => {
     res.send(updateOffer);
 }))
 
+router.get(`/offers`, expressAsyncHandler ( async (req:any, res:any) => {
+    let offersList = [];
+    const user = req.user.id;
+    const userOffers = await UserModel.findById(user);
+
+    for (let offer of userOffers!.forSale){
+        const item = await ItemModel.findById(offer.valueOf());
+
+        offersList.push(item);
+        
+    }
+    res.send(offersList) 
+
+}))
+
 async function isOwner(req: any, res: any, next:any) {
     
     const item = await ItemModel.findById(req.params.itemId);

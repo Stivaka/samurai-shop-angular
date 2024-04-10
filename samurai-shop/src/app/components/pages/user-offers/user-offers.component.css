@@ -1,0 +1,58 @@
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+    padding-top: 2rem;
+}
+
+.itemHead {
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+    font-size: 35px;
+}
+
+ul li {
+    padding: 0rem 1.5rem;
+}
+
+li a {
+    height: 22.5rem;
+    width: 20rem;
+    border-bottom: 2px solid rgba(0, 166, 255, 0.965);
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    color: white
+}
+
+li a:hover {
+    opacity: 0.9;
+    cursor: pointer;
+}
+
+li a img {
+    object-fit: cover;
+    height: 18rem
+}
+
+.content {
+    margin-top: 0.3rem;
+    padding: 0.5rem 1rem;
+    position: relative;
+    height:  7rem;
+    background-color: rgb(30, 29, 29);
+}
+
+.price {
+    position: absolute;
+    bottom: 0.9rem;
+
+}

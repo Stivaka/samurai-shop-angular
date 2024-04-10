@@ -3,7 +3,7 @@ import { Item } from '../shared/models/Item';
 // import { items } from 'src/data';
 import { HttpClient } from '@angular/common/http';
 import { Observable, tap } from 'rxjs';
-import { catalog_url, create_item_method, delete_item, details_item_by_id } from '../shared/https/url';
+import { catalog_url, create_item_method, delete_item, details_item_by_id, user_offers } from '../shared/https/url';
 import { CreateItem } from '../shared/interfaces/create_item';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -31,4 +31,8 @@ export class ItemService {
   }
 
 
+  getUserItems(): Observable<Item[]>{
+
+    return this.http.get<Item[]>(user_offers);
+  }
 }
