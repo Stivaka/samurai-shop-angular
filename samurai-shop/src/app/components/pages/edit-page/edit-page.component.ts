@@ -104,6 +104,7 @@ export class EditPageComponent {
     
     this.createService.update(this.item).subscribe({
       next:() => {
+        
         this.router.navigateByUrl(`/item/${this.item.id}`);
       },
       error:(error) => {

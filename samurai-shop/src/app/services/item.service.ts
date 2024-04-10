@@ -6,13 +6,14 @@ import { Observable, tap } from 'rxjs';
 import { catalog_url, create_item_method, delete_item, details_item_by_id } from '../shared/https/url';
 import { CreateItem } from '../shared/interfaces/create_item';
 import { ToastrService } from 'ngx-toastr';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemService {
 
-  constructor(private http:HttpClient, private ToastrService:ToastrService) { }
+  constructor(private http:HttpClient, private ToastrService:ToastrService, private router:Router) { }
 
   getAll(): Observable<Item[]>{
 
@@ -28,5 +29,6 @@ export class ItemService {
     
     return this.http.get<Item>(delete_item + itemId);
   }
+
 
 }

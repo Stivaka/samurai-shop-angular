@@ -64,10 +64,27 @@ export class UserService {
     )
   }
 
+  public get isLogged():boolean{
+    if(localStorage.getItem('User')){
+      return false;
+    } else {
+      return true;
+    }
+  }
+
+  public get isGuest():boolean{
+    if(localStorage.getItem('User')){
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   public get currentUser():User{
 
     return this.userSubject.value;
   }
+
 
   logout(){
     this.userSubject.next(new User());

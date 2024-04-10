@@ -16,6 +16,7 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { EditPageComponent } from './components/pages/edit-page/edit-page.component';
 import { TextInputComponent } from './components/partials/text-input/text-input.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
+import { UserOffersComponent } from './components/pages/user-offers/user-offers.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { RegisterPageComponent } from './components/pages/register-page/register
     EditPageComponent,
     TextInputComponent,
     RegisterPageComponent,
+    UserOffersComponent,
   ],
   imports: [
     BrowserModule,

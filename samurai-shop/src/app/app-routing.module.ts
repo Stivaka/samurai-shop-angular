@@ -7,15 +7,19 @@ import { LoginPageComponent } from './components/pages/login-page/login-page.com
 import { CreateComponent } from './components/pages/create/create.component';
 import { EditPageComponent } from './components/pages/edit-page/edit-page.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
+import { UserOffersComponent } from './components/pages/user-offers/user-offers.component';
+import { UserActivate } from './guard/user.active';
+import { GuestActivate } from './guard/guest.active';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
   {path:'catalog', component:CatalogComponent},
   {path:'item/:id', component:DetailPageComponent},
-  {path: 'login', component:LoginPageComponent},
-  {path: 'create', component:CreateComponent},
-  {path: 'edit/:id', component:EditPageComponent},
-  {path: 'register', component:RegisterPageComponent},
+  {path: 'login', component:LoginPageComponent, canActivate: [UserActivate]},
+  {path: 'create', component:CreateComponent, canActivate: [GuestActivate]},
+  {path: 'edit/:id', component:EditPageComponent, canActivate: [GuestActivate]},
+  {path: 'register', component:RegisterPageComponent, canActivate: [UserActivate]},
+  {path: 'offers', component:UserOffersComponent, canActivate: [GuestActivate]},
 ];
 
 @NgModule({

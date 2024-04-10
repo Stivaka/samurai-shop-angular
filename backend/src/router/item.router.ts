@@ -35,6 +35,7 @@ router.get(`/details/:itemId` ,expressAsyncHandler( async (req, res) => {
 }));
 
 router.use(authMid)
+
 router.post(`/create`,  expressAsyncHandler( async (req: any, res: any) => {
     
     const requestCreate = req.body;
@@ -64,7 +65,6 @@ router.post(`/edit`, expressAsyncHandler ( async (req, res) => {
 async function isOwner(req: any, res: any, next:any) {
     
     const item = await ItemModel.findById(req.params.itemId);
-
     if (item!.owner != req.user?.id){
         return 
     }
