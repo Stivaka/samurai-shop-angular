@@ -42,10 +42,11 @@ router.post(`/create`,  expressAsyncHandler( async (req: any, res: any) => {
     res.send(newOffer);
 }));
 
-router.get(`/delete/:itemId`, expressAsyncHandler( async (req, res) => {
+router.get(`/delete/:itemId`, expressAsyncHandler( async (req:any, res:any) => {
 
     
     const item = await ItemModel.findByIdAndDelete(req.params.itemId);
+    await UserModel.findByIdAndUpdate(req.user.id, {$pull: {forSale: req.params.itemId}});
     res.send(item)
 }))
 

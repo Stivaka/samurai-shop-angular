@@ -27,43 +27,40 @@ p {
 
 h1 {
 
-position: relative;
+position: absolute;
 height: auto;
 width: 100%;
 text-align: center;
 color: white;
 font-size: 40px;
 margin-top: 4rem;
-margin-left: 42rem;
 }
 
 .content{
     display: flex;
 }
 
-/* p{
-position: relative;
+.description{
+    position: absolute;
 height: auto;
-width: 70%;
+width: 50%;
 text-align: center;
 color: white;
 font-size: 25px;
 margin-top: 20rem;
 margin-right: 10rem;
-
-} */
-
-.description{
-    position: relative;
-height: auto;
-width: 70%;
-text-align: center;
-color: white;
-font-size: 25px;
-margin-top: 20rem;
-margin-right: 15rem;
+margin-left: 55rem;
 background-color: rgb(25, 25, 25);
 border-bottom: 5px solid #000000;
 border-radius: 2rem;
+}
+
+.JapText{
+    max-width: 650px;
+    max-height: 850px;
+    /* position: relative; */
+    z-index: 0;
+    margin-left: 73rem;
+    margin-top: 8rem;
 }
 
