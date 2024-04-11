@@ -1,0 +1,147 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin: 1.5rem;
+    margin-top: 0.5rem;
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    flex: 3 0;
+    justify-content: space-evenly;
+    /* border: 1px solid #0396f1; */
+    border-radius: 2rem;
+    list-style: none;
+    margin: 0.5rem;
+    padding: 0;
+}
+
+ul li {
+    display: flex;
+    margin-top: 15px;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: 2px solid #000000;
+    border-top: 2px solid #0f72dc;
+    background-color: rgb(25, 25, 25);
+    border-radius: 2rem;
+}
+
+li img {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+li div {
+    padding: 1rem;
+}
+
+li div:not(:first-child) {
+    flex-basis: 18%;
+}
+
+li select {
+    width: 3rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid rgb(6, 106, 194);
+    font-size: 1.1rem;
+    font-weight: 100;
+}
+
+li .remove-button {
+    border-radius: 1rem;
+    border: none;
+    padding: 0.5rem;
+    color: #ffffff;
+    background-color: #0f72dc;
+    outline: none;
+}
+
+li .remove-button:hover {
+    opacity: 1;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #0f72dc;
+}
+
+.checkout {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1 3;
+    height: 10rem;
+    border-bottom: 5px solid #000000;
+    /* border-top: 5px solid #000000; */
+    border-radius: 2rem;
+    padding: 0.5rem;
+    margin: 1.5rem;
+    background-color: rgb(25, 25, 25);
+}
+
+.checkout>div {
+    font-size: 1.4rem;
+    margin: 1rem;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.total-price {
+    color: white;
+}
+
+.checkout a {
+    margin-bottom: 5rem;
+    padding: 1rem;
+    color: white;
+    background: #0f72dc;
+    display: block;
+    width: 70%;
+    border-radius: 2rem;
+    text-align: center;
+    justify-self: center;
+}
+
+.checkout a:hover {
+    color: #0f72dc;
+    background-color: white;
+}
+
+h1{
+    color: white;
+    align-items: center;
+    justify-content:center;
+    display: flex;
+    padding-top: 3rem;
+    padding-right: 33rem;
+    font-weight: 100;
+}
+
+.cartItemName a{
+    color: white;
+    font-style: none;
+    font-size: 20px;
+    
+}
+
+.cartItemPrice{
+    color: white;
+    font-size: 20px;
+}
+
+.noItems {
+    color: white;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    font-weight: 100;
+}

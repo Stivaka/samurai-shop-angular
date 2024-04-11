@@ -22,7 +22,7 @@
                     </div>
                 </li>
                 <li>
-                    <a routerLink="/cart">Shopping Cart<span>3</span></a>
+                    <a routerLink="/cart">Shopping Cart<span *ngIf="cartQuantity">{{cartQuantity}}</span></a>
                 </li>
             </ul>
         </nav>

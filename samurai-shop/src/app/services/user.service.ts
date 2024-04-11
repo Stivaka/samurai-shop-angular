@@ -3,9 +3,10 @@ import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { User } from '../shared/models/User';
 import { IUserLogin } from '../shared/interfaces/userLogin';
 import { HttpClient } from '@angular/common/http';
-import { register_user, user_login } from '../shared/https/url';
+import { register_user, user_checkout, user_login } from '../shared/https/url';
 import { ToastrService } from 'ngx-toastr';
 import { IUserRegister } from '../shared/interfaces/user_register';
+import { Cart } from '../shared/models/Cart';
 
 @Injectable({
   providedIn: 'root'

@@ -1,0 +1,33 @@
+<h1>Your Cart</h1>
+<div class="container">
+    <ul>
+        <h2 class="noItems" *ngIf="cart.items.length == 0">There are no items in cart!</h2>
+        <li *ngFor="let cartItem of cart.items">
+
+            <div>
+                <img [src]="cartItem.item.image">
+            </div>
+            <div class="cartItemName">
+                <a routerLink="/item/{{cartItem.item.id}}">
+                    {{cartItem.item.name}}
+                </a>
+            </div>
+            <div class="cartItemPrice">
+                {{cartItem.price | currency}}
+            </div>
+            <div>
+                <button class="remove-button" (click)="removeFromCart(cartItem)">
+                    Remove
+                </button>
+            </div>
+        </li>
+    </ul>
+    <div class="checkout">
+        <div>
+            <div class="total-price">
+                Total: {{cart.totalPrice | currency}}
+            </div>
+        </div>
+        <a routerLink="/" (click)="checkout()">Checkout</a>
+    </div>
+</div>

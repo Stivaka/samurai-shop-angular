@@ -34,6 +34,15 @@ router.get(`/details/:itemId` ,expressAsyncHandler( async (req, res) => {
 
 }));
 
+
+router.get(`/checkout`, expressAsyncHandler( async (req, res) => {
+    
+    const items = await ItemModel.findById(`660dda2655091465133da6b5`);
+    console.log(`whaaat`);
+    
+    res.send(items)
+}));
+
 router.use(authMid)
 
 router.post(`/create`,  expressAsyncHandler( async (req: any, res: any) => {
@@ -77,13 +86,4 @@ router.get(`/offers`, expressAsyncHandler ( async (req:any, res:any) => {
 
 }))
 
-async function isOwner(req: any, res: any, next:any) {
-    
-    const item = await ItemModel.findById(req.params.itemId);
-    if (item!.owner != req.user?.id){
-        return 
-    }
-    next();
-
-}
 export default router;

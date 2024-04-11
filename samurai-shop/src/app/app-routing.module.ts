@@ -10,6 +10,8 @@ import { RegisterPageComponent } from './components/pages/register-page/register
 import { UserOffersComponent } from './components/pages/user-offers/user-offers.component';
 import { UserActivate } from './guard/user.active';
 import { GuestActivate } from './guard/guest.active';
+import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
+import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 
 const routes: Routes = [
   {path:'', component:HomeComponent},
@@ -20,6 +22,8 @@ const routes: Routes = [
   {path: 'edit/:id', component:EditPageComponent, canActivate: [GuestActivate]},
   {path: 'register', component:RegisterPageComponent, canActivate: [UserActivate]},
   {path: 'offers', component:UserOffersComponent, canActivate: [GuestActivate]},
+  {path: 'cart', component:CartPageComponent, canActivate: [GuestActivate]},
+  {path: '**', component:NotFoundComponent},
 ];
 
 @NgModule({

@@ -8,3 +8,4 @@ export const delete_item = base_url + `/delete/`;
 export const update_item = base_url + '/edit'
 export const register_user = base_url + '/register';
 export const user_offers = base_url + '/offers';
+export const user_checkout = 'http://localhost:3000/checkout';

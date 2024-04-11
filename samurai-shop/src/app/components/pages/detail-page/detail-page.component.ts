@@ -4,6 +4,7 @@ import { ItemService } from 'src/app/services/item.service';
 import { Item } from 'src/app/shared/models/Item';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { CartService } from 'src/app/services/cart.service';
 
 @Component({
   selector: 'app-detail-page',
@@ -16,7 +17,8 @@ export class DetailPageComponent {
 
   item!: Item;
 
-  constructor(activatedRoute: ActivatedRoute, private itemService: ItemService, private router:Router, private toastrService: ToastrService,) {
+  constructor(activatedRoute: ActivatedRoute, private itemService: ItemService,
+     private router:Router, private toastrService: ToastrService, private cartService:CartService) {
 
     activatedRoute.params.subscribe((params) => {
 
@@ -49,7 +51,8 @@ export class DetailPageComponent {
   }
 
   addClick() {
-    this.router.navigateByUrl('/catalog')
+    this.cartService.addToCart(this.item);
+    this.router.navigateByUrl('/cart');
   }
 
   editBtn(){

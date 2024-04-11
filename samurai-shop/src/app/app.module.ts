@@ -17,6 +17,8 @@ import { EditPageComponent } from './components/pages/edit-page/edit-page.compon
 import { TextInputComponent } from './components/partials/text-input/text-input.component';
 import { RegisterPageComponent } from './components/pages/register-page/register-page.component';
 import { UserOffersComponent } from './components/pages/user-offers/user-offers.component';
+import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
+import { NotFoundComponent } from './components/pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { UserOffersComponent } from './components/pages/user-offers/user-offers.
     TextInputComponent,
     RegisterPageComponent,
     UserOffersComponent,
+    CartPageComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,
