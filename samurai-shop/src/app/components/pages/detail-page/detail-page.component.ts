@@ -51,8 +51,13 @@ export class DetailPageComponent {
   }
 
   addClick() {
-    this.cartService.addToCart(this.item);
-    this.router.navigateByUrl('/cart');
+    if (localStorage.getItem('User')){
+
+      this.cartService.addToCart(this.item);
+      this.router.navigateByUrl('/cart');
+    } else{
+      this.router.navigateByUrl(`/login`)
+    }
   }
 
   editBtn(){

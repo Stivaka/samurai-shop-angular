@@ -56,3 +56,11 @@ li a img {
     bottom: 0.9rem;
 
 }
+
+h2{
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding-top: 1.5rem;
+    font-size: 25px;
+}

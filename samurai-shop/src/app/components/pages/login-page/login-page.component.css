@@ -12,4 +12,9 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
+
+}
+
+.register > a{
+    color: rgb(0, 109, 233);
 }

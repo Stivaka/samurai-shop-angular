@@ -1,5 +1,5 @@
 <p class="itemHead">User's offers:</p>
-
+<h2 *ngIf="userItems.length == 0">There are no items yet!</h2>
 <ul>
     <li *ngFor="let item of userItems">
         

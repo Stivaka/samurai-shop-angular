@@ -1,3 +1,69 @@
 p {
     color: white;
 }
+
+.door {
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    margin-top: 10rem;
+    margin-left: 14rem;
+    z-index: 0;
+}
+
+.samurai {
+    width: 350px;
+    position: absolute;
+    margin-top: 10rem;
+    margin-left: 18rem;
+    z-index: 1;
+}
+
+.parent {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+h1 {
+
+position: relative;
+height: auto;
+width: 100%;
+text-align: center;
+color: white;
+font-size: 40px;
+margin-top: 4rem;
+margin-left: 42rem;
+}
+
+.content{
+    display: flex;
+}
+
+/* p{
+position: relative;
+height: auto;
+width: 70%;
+text-align: center;
+color: white;
+font-size: 25px;
+margin-top: 20rem;
+margin-right: 10rem;
+
+} */
+
+.description{
+    position: relative;
+height: auto;
+width: 70%;
+text-align: center;
+color: white;
+font-size: 25px;
+margin-top: 20rem;
+margin-right: 15rem;
+background-color: rgb(25, 25, 25);
+border-bottom: 5px solid #000000;
+border-radius: 2rem;
+}
+
